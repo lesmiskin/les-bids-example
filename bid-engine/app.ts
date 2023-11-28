@@ -1,7 +1,10 @@
 import express, { Request, Response } from 'express';
 import { db } from './knexfile';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 // /auctions
 app.get('/auctions', async (request: Request, response: Response) => {
@@ -34,6 +37,6 @@ app.get('/auctions/:id/bids', async (request: Request, response: Response) => {
   
   
 // What the console does (in the background).
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(3001, () => {
+  console.log('Server is running on port 3001');
 });
